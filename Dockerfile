@@ -22,8 +22,8 @@ RUN apt-get update && apt-get upgrade -y &&\
     libapache2-mod-php5 &&\
     rm -rf /var/lib/apt/lists/* &&\
     a2enmod rewrite &&\
-
-RUN apt-get update && apt-get install -y openssh-server apache2 supervisor
+    apt-get update &&\
+    apt-get install -y openssh-server apache2 supervisor
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf 
 
